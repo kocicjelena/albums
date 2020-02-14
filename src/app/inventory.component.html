@@ -1,0 +1,37 @@
+
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <th> </th>
+            <th>
+			<div class="float-left">
+				<!-- Search form -->
+			<form class="form-inline waves-light" mdbWavesEffect>
+			  <div class="md-form mt-0">
+			    <input class="form-control mr-sm-0" type="text" placeholder="Search" (click)="Find($event)">
+			  </div>
+			</form>
+			</div>
+			</th>
+        </thead>
+        <tbody *ngFor="let employee of inventories" class="d-inline">
+            <tr>
+		 <td *ngIf="employee.postId==id">
+
+		
+		 <br />Post id: {{employee.postId}}, from Albums id: {{id}}:<br />
+		  
+		   <img src="{{employee.url[0]}}" alt="0"> {{employee.url[0]}}<br />
+		   <img src="{{employee.url[1]}}" alt="1"> {{employee.url[1]}}<br />
+		   <img src="{{employee.url[2]}}" alt="2"> {{employee.url[2]}}<br />
+		    <img src="{{employee.url[3]}}" alt="3"> {{employee.url[3]}}<br />
+	  <!--<br />{{employee.url}} -->
+	
+		</td>
+           <!--     <td><a href="" (click)="Find($event)"><img src="{{employee.url}}"><br />{{employee.title}} <br />kreirao: {{employee.kreirao}}</a></td>
+           -->   
+            </tr>
+        </tbody>
+    </table>
+</div>

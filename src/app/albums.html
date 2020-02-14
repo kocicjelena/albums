@@ -1,0 +1,62 @@
+
+
+
+
+<div class="container">
+	
+
+  
+   <button  class="float-right" (click)="showVertical()"><i class="fa fa-bars"></i></button>
+    <button  class="float-right" (click)="showTab()"><i class="fa fa-folder"></i></button>
+    <br><br>
+    
+    
+    
+    <div *ngIf="tabFlag">
+  
+<div class="table-responsive">
+
+    <table class="table">
+        <thead>
+            <th></th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of iproducts" class="d-inline">
+		 <td>		
+			<a class="d-inline" [routerLink]="['/photos', employee.id]">
+				<img src="{{employee.url}}"><br />{{employee.title}} <br />kreirao: {{employee.kreirao}} 
+				</a>
+		</td>
+           <!--     <td><a href="" (click)="Find($event)"><img src="{{employee.url}}"><br />{{employee.title}} <br />kreirao: {{employee.kreirao}}</a></td>
+           -->   
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    </div>
+    <div *ngIf="vertFlag">
+  <div class="table-responsive">
+
+    <table class="table">
+        <thead>
+            <th></th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of iproducts">
+		 <td>		
+			<a [routerLink]="['/photos', employee.id]">
+				<img src="{{employee.url}}">{{employee.title}} kreirao: {{employee.kreirao}} 
+			</a>
+		</td>
+           <!--     <td><a href="" (click)="Find($event)"><img src="{{employee.url}}"><br />{{employee.title}} <br />kreirao: {{employee.kreirao}}</a></td>
+           -->   
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    </div>
+
+  </div>
+
